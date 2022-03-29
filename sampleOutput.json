@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import NewsItem from './NewsItem'
-
-
-export class News extends Component {
-  article=[
+{
+    "status": "ok",
+    "totalResults": 2047,
+    "articles": [
     {
     "source": {
     "id": "engadget",
@@ -265,42 +263,4 @@ export class News extends Component {
     "content": "\"On the facts and the law, the court correctly decided every issue presented in Epic's appeal,\" Apple lawyers wrote in the company's filing. They repeated earlier arguments that Epic is attempting to… [+1294 chars]"
     }
     ]
-    constructor(){
-      super();
-      this.state={
-        articles:this.article
-      }
     }
-    async componentDidMount(){
-      let url="https://newsapi.org/v2/top-headlines?country=in&apiKey=0f422d94684048759b3ae0f2ed13f3fb";
-     let data =await fetch(url);
-     let parsedData= await data.json()
-    //  console.log(parsedData);
-     this.setState({articles:parsedData.articles})
-    }
-  render() {
-    return (
-      <div className='container-fluid'>
-        <div className="container my-3">
-            <h1>NewsPanda-Top Headlines</h1>
-            </div>
-            <div className="row">
-              {this.state.articles.map((element)=>{
-                 return <div className="col-md-4" key={element.urlToImage}>
-                 <NewsItem  title={element.title} description={element.description}  imgUrl={element.urlToImage} newsUrl={element.url}/>
-                 </div>
-              })}
-             
-              
-            
-           
-            </div>
-        
-
-      </div>
-    )
-  }
-}
-
-export default News
-
