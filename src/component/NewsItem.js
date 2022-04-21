@@ -1,14 +1,12 @@
-import { getByTitle } from '@testing-library/react';
 import React, { Component } from 'react';
-
 export class NewsItem extends Component {
   
   render() {
     let {title,description,imgUrl,newsUrl}= this.props;
     return (
-      <div className='my-3'>
+    <div className='my-3 '>
         <div className="card" style={{width:"18rem"}}>
-          <img src={!imgUrl?"https://media.istockphoto.com/photos/majestic-giant-redwood-tree-scenery-picture-id1025158308?s=612x612 ":imgUrl } className="card-img-top" alt="..."/>
+          <img src={!imgUrl?"https://media.istockphoto.com/photos/majestic-giant-redwood-tree-scenery-picture-id1025158308?s=612x612":imgUrl } className="card-img-top" alt="..."/>
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
