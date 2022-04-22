@@ -19,14 +19,14 @@ function App() {
     <Navbar/>
     
     <Routes>
-      <Route path='/'><News pageSize={18} category="general" country ="in"/></Route>
-      <Route path='/business'><News pageSize={18} category="business" country ="in"/></Route>
-      <Route path='/entertainment'><News pageSize={18} category="entertainment" country ="in"/></Route> 
-      <Route path='/general'><News pageSize={18} category="general" country ="in"/></Route>  
-      <Route path='/health'><News pageSize={18} category="health" country ="in"/></Route>
-      <Route path='/science'><News pageSize={18} category="science" country ="in"/></Route>
-      <Route path='/sports'><News pageSize={18} category="sports" country ="in"/></Route>
-      <Route path='/technology'><News pageSize={18} category="technology" country ="in"/></Route>
+      <Route path='/*' element={<News pageSize={18} category="general" country ="in"/>}  />
+      <Route path='/business' element={<News pageSize={18} category="business" country ="in"/>}  />
+      <Route path='/entertainment' element={<News pageSize={18} category="entertainment" country ="in"/>}  /> 
+      <Route path='/general' element={<News pageSize={18} category="general" country ="in"/>} /> 
+      <Route path='/health' element={<News pageSize={18} category="health" country ="in"/>} />
+      <Route path='/science' element={<News pageSize={18} category="science" country ="in"/>} />
+      <Route path='/sports' element={<News pageSize={18} category="sports" country ="in"/>}  /> 
+      <Route path='/technology' element={<News pageSize={18} category="technology" country ="in"/>}  />
     </Routes>
     </Router>
     </>
