@@ -5,13 +5,16 @@ import {
   BrowserRouter as Router,
   
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 
 
 
+
+
 function App() {
+  const apiKey="0f422d94684048759b3ae0f2ed13f3fb";
+  
   return (
     <>
 
@@ -19,14 +22,14 @@ function App() {
     <Navbar/>
     
     <Routes>
-      <Route path='/*' element={<News pageSize={18} category="general" country ="in"/>}  />
-      <Route path='/business' element={<News pageSize={18} category="business" country ="in"/>}  />
-      <Route path='/entertainment' element={<News pageSize={18} category="entertainment" country ="in"/>}  /> 
-      <Route path='/general' element={<News pageSize={18} category="general" country ="in"/>} /> 
-      <Route path='/health' element={<News pageSize={18} category="health" country ="in"/>} />
-      <Route path='/science' element={<News pageSize={18} category="science" country ="in"/>} />
-      <Route path='/sports' element={<News pageSize={18} category="sports" country ="in"/>}  /> 
-      <Route path='/technology' element={<News pageSize={18} category="technology" country ="in"/>}  />
+      <Route path='/*' element={<News pageSize={18} category="general" apiKey={apiKey} country ="in"/>}  />
+      <Route path='/business' element={<News pageSize={18} category="business" apiKey={apiKey} country ="in"/>}  />
+      <Route path='/entertainment' element={<News pageSize={18} category="entertainment" apiKey={apiKey} country ="in"/>}  /> 
+      <Route path='/general' element={<News pageSize={18} category="general" apiKey={apiKey} country ="in"/>} /> 
+      <Route path='/health' element={<News pageSize={18} category="health" apiKey={apiKey} country ="in"/>} />
+      <Route path='/science' element={<News pageSize={18} category="science" apiKey={apiKey} country ="in"/>} />
+      <Route path='/sports' element={<News pageSize={18} category="sports" apiKey={apiKey} country ="in"/>}  /> 
+      <Route path='/technology' element={<News pageSize={18} category="technology" apiKey={apiKey} country ="in"/>}  />
     </Routes>
     </Router>
     </>
