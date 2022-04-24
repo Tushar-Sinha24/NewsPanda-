@@ -39,23 +39,16 @@ export class News extends Component {
     }
 
     componentDidUpdate(prevProps){
-      if(this.props.category != prevProps.category){
+      if(this.props.category !== prevProps.category){
         this.updateNews();
       }
     }
     
     prev= async()=>{
-<<<<<<< HEAD
    
 
     this.setState({page:this.state.page-1})
    this.updateNews();
-
-   this.setState({page:this.state.page-1})
-=======
-      this.setState({page:this.state.page-1})
->>>>>>> 3e31e92e42b523b00df21bafe696eea86157df4d
-      this.updateNews();
     }
 
      next= async()=>{
