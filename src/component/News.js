@@ -37,12 +37,21 @@ export class News extends Component {
     async componentDidMount(){
       this.updateNews();
     }
+
+    componentDidUpdate(prevProps){
+      if(this.props.category != prevProps.category){
+        this.updateNews();
+      }
+    }
     
     prev= async()=>{
    
 
     this.setState({page:this.state.page-1})
    this.updateNews();
+
+   this.setState({page:this.state.page-1})
+      this.updateNews();
     }
 
      next= async()=>{
@@ -55,7 +64,7 @@ export class News extends Component {
       
       <div className='container-fluid'>
         <div className="container my-3" >
-            <h2 className='text-center' style={{margin:'35px,0px'}}>NewsPanda-Top Headlines on {this.capitalizeFirstLetter(this.props.category)}</h2>
+            <h2 className='text-center' style={{margin:'35px,0px', marginTop:'90px'}}>NewsPanda-Top Headlines on {this.capitalizeFirstLetter(this.props.category)}</h2>
             
             <div className="row">
               {this.state.articles.map((element)=>{
