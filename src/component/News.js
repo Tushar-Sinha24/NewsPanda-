@@ -45,12 +45,16 @@ export class News extends Component {
     }
     
     prev= async()=>{
+<<<<<<< HEAD
    
 
     this.setState({page:this.state.page-1})
    this.updateNews();
 
    this.setState({page:this.state.page-1})
+=======
+      this.setState({page:this.state.page-1})
+>>>>>>> 3e31e92e42b523b00df21bafe696eea86157df4d
       this.updateNews();
     }
 
