@@ -45,8 +45,6 @@ export class News extends Component {
     }
     
     prev= async()=>{
-   
-
     this.setState({page:this.state.page-1})
    this.updateNews();
     }
