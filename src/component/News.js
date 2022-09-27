@@ -19,7 +19,6 @@ export class News extends Component {
         articles:[],
         loading:false,
         page:1
-
       }
 
       document.title=`${this.capitalizeFirstLetter(this.props.category)} - NewsPanda`;
@@ -32,7 +31,7 @@ export class News extends Component {
       // parsedData=(Object.values(parsedData.articles));
       // console.log(parsedData.articles);
       this.setState({articles:parsedData.articles, totalResults:parsedData.totalResults})
-      
+      console.log(this.state.articles)
     }
 
     async componentDidMount(){
@@ -63,7 +62,8 @@ export class News extends Component {
             <h2 className='text-center' style={{margin:'35px,0px', marginTop:'90px'}}>NewsPanda-Top Headlines on {this.capitalizeFirstLetter(this.props.category)}</h2>
             
             <div className="row">
-              {this.state.articles.map((element)=>{
+              {this.state.articles &&
+              this.state.articles.map((element)=>{
                  return <div className="col-md-4" key={element.url}>
                  <NewsItem  title={element.title} description={element.description}  imgUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                  </div>
